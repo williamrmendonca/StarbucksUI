@@ -16,6 +16,10 @@ import Tall from '../assets/icons/tall.svg';
 import Grande from '../assets/icons/grande.svg';
 import Venti from '../assets/icons/venti.svg';
 
+Feather.loadFont();
+Octicons.loadFont();
+Ionicons.loadFont();
+
 const {height, width} = Dimensions.get('window');
 
 const Details = ({navigation}) => {

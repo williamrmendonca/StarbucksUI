@@ -9,6 +9,7 @@ import {
   Dimensions,
   Image,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Octicons from 'react-native-vector-icons/Octicons';
@@ -18,6 +19,8 @@ Feather.loadFont();
 Octicons.loadFont();
 
 const {height, width} = Dimensions.get('window');
+
+const Plataform = Platform.OS
 
 const Home = ({navigation}) => {
   const Featured = ({item}) => {
@@ -100,7 +103,7 @@ const Home = ({navigation}) => {
               marginRight: 10,
             }}
           />
-          <TextInput placeholder="Search" placeholderTextColor="#d4d3d3" />
+          <TextInput placeholder="Procurar" placeholderTextColor="#d4d3d3" />
         </View>
       </View>
       <View style={styles.wrapper}>
@@ -169,7 +172,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#f4f3f3',
     paddingHorizontal: 15,
-    paddingVertical: 20,
+    paddingVertical: Plataform === 'ios' ? 15 : 0,
     borderRadius: 40,
   },
   headerText: {
