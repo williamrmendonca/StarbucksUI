@@ -14,6 +14,9 @@ import Feather from 'react-native-vector-icons/Feather';
 import Octicons from 'react-native-vector-icons/Octicons';
 import data from '../assets/data';
 
+Feather.loadFont();
+Octicons.loadFont();
+
 const {height, width} = Dimensions.get('window');
 
 const Home = ({navigation}) => {
@@ -68,9 +71,9 @@ const Home = ({navigation}) => {
       <SafeAreaView>
         <View style={styles.container}>
           <View>
-            <Text style={styles.title}>Good Morning</Text>
+            <Text style={styles.title}>Bom dia</Text>
             <View style={styles.subHeader}>
-              <Text style={styles.subtitle}>Beti</Text>
+              <Text style={styles.subtitle}>William Mendonça</Text>
               <Feather
                 name="coffee"
                 size={24}
@@ -148,7 +151,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   subtitle: {
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#555555',
   },
