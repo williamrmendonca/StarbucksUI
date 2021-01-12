@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import Feather from 'react-native-vector-icons/Feather';
+
 import data from '../assets/data';
 
 Feather.loadFont();

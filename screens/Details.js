@@ -11,6 +11,8 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
+import { SharedElement } from 'react-navigation-shared-element';
+
 import data from '../assets/data';
 import Tall from '../assets/icons/tall.svg';
 import Grande from '../assets/icons/grande.svg';
@@ -52,6 +54,7 @@ const Details = ({navigation}) => {
               <Octicons name="star" size={15} style={styles.star} />
             </View>
           </View>
+          <SharedElement id={`item.${item.id}.image_url`}>
           <Animated.Image
             source={item.image}
             style={[
@@ -68,6 +71,7 @@ const Details = ({navigation}) => {
               },
             ]}
           />
+          </SharedElement>
         </Animated.View>
         <View
           style={{

@@ -13,6 +13,8 @@ import {
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Octicons from 'react-native-vector-icons/Octicons';
+import { SharedElement } from 'react-navigation-shared-element';
+
 import data from '../assets/data';
 
 Feather.loadFont();
@@ -32,7 +34,7 @@ const Home = ({navigation}) => {
             marginRight: item.id === '4' ? 20 : 0,
           },
         ]}>
-        <Image source={item.image} style={styles.featuredImage} />
+          <Image source={item.image} style={styles.featuredImage} />
         <Text style={styles.featuredText}>{item.name}</Text>
       </View>
     );
@@ -48,7 +50,9 @@ const Home = ({navigation}) => {
             marginLeft: item.id === '1' ? 20 : 0,
           },
         ]}>
-        <Image source={item.image} style={styles.popularImage} />
+        <SharedElement id={`item.${item.id}.image_url`}>
+          <Image source={item.image} style={styles.popularImage} />
+        </SharedElement>
         <Text style={styles.popularTitle}>{item.name}</Text>
         <View style={styles.action}>
           <View style={styles.rating}>
@@ -191,8 +195,8 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     marginRight: 60,
     backgroundColor: '#f8f8f7',
-    height: height / 4,
-    width: height / 5.5,
+    height: 200, //height / 4,
+    width: 150, //height / 5.5,
     borderRadius: 20,
     justifyContent: 'flex-end',
     paddingBottom: 20,
